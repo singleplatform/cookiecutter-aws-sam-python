@@ -1,11 +1,10 @@
 from __future__ import print_function
 
-import os
-
 TERMINATOR = "\x1b[0m"
 INFO = "\x1b[1;33m [INFO]: "
 SUCCESS = "\x1b[1;32m [SUCCESS]: "
 HINT = "\x1b[3;33m"
+
 
 def main():
 

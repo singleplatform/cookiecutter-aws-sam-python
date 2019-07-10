@@ -1,7 +1,12 @@
 [run]
-branch = True
-omit = */build/*,tests/*
+omit =
+    .tox/*
+
 [report]
-exclude_lines =
-    pragma: no cover
-    raise NotImplementedError.*
+skip_covered = True
+
+[html]
+directory = outputs
+
+[xml]
+output = outputs/coverage.xml

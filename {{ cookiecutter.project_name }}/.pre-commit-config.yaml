@@ -1,0 +1,43 @@
+repos:
+    - repo: git://github.com/pre-commit/pre-commit-hooks
+      sha: v0.9.1
+      hooks:
+          - id: trailing-whitespace
+            stages: [commit]
+          - id: end-of-file-fixer
+            stages: [commit]
+          - id: check-json
+            files: \.(bowerrc|jshintrc|json)$
+            stages: [commit]
+          - id: check-yaml
+            exclude: template.yaml
+            stages: [commit]
+          - id: debug-statements
+            stages: [commit]
+          - id: no-commit-to-branch
+            name: (git) -- no-commit-to-branch
+            args: ['staging', 'master']
+            stages: [commit]
+          - id: check-merge-conflict
+            stages: [commit]
+    - repo: https://github.com/milin/importanize
+      sha: 'master'
+      hooks:
+          - id: importanize
+            args: [--verbose]
+            stages: [commit]
+    - repo: https://github.com/milin/giticket
+      sha: '7de39cb'
+      hooks:
+          - id: giticket
+            args: ['--regex=SPROD-[0-9]']
+    - repo: https://github.com/jorisroovers/gitlint
+      sha: 'master'
+      hooks:
+          - id: gitlint
+            stages: [commit-msg]
+    - repo: https://github.com/peterdemin/pip-compile-multi
+      rev: v1.3.3
+      hooks:
+          - id: pip-compile-multi-verify
+            stages: [commit]

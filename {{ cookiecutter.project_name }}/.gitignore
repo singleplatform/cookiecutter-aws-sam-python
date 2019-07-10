@@ -134,7 +134,7 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
-/*.zip
+MANIFEST
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
@@ -162,6 +162,11 @@ coverage.xml
 *.mo
 *.pot
 
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+
 # Flask stuff:
 instance/
 .webassets-cache
@@ -182,6 +187,7 @@ target/
 .python-version
 
 # celery beat schedule file
+celerybeat-schedule
 celerybeat-schedule.*
 
 # SageMath parsed files
@@ -208,6 +214,7 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+outputs/
 
 ### VisualStudioCode ###
 .vscode/*
